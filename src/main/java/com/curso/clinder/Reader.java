@@ -40,11 +40,19 @@ public class Reader {
                 words = line.split("\\Q" + SEPARE);
 
                 /////////////////
-                String pass = words[1];
-                String userName = words[0];
-                String dni = words[2];
+                String pass = words[0];
+                String userName = words[1];
+                String age = words[2];
+                String likes=words[3];
+                String sexualOrentation=words[4];
+                String gender=words[5];
 
-                User toAdd = new User(userName, pass,dni);
+                ///TODO 
+                User toAdd = new User(userName, pass);
+                toAdd.setAge(Integer.parseInt(age));
+                toAdd.setGender(Integer.parseInt(gender));
+                toAdd.setSexualOrientation(Integer.parseInt(sexualOrentation));
+                
                 fileUser.add(toAdd);
             }
 
