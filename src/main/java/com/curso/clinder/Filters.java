@@ -27,7 +27,7 @@ public class Filters {
         return usersFiltered;
     }
 
-    public ArralyList<User> filterAge(User user, ArrayList<User> users) {
+    public ArrayList<User> filterAge(User user, ArrayList<User> users) {
         int age = user.getAge(); //
         ArrayList<User> usersFiltered = new ArrayList<>();
 
@@ -39,7 +39,7 @@ public class Filters {
         return usersFiltered;
     }
 
-    public ArralyList<User> filterLikes(User user, ArrayList<User> users) {
+    public ArrayList<User> filterLikes(User user, ArrayList<User> users) {
         ArrayList<User> userFiltered = new ArrayList<>();
         ArrayList<User> userFilteredGood = new ArrayList<>();
         ArrayList<User> userFilteredBad = new ArrayList<>();
@@ -47,9 +47,9 @@ public class Filters {
 
         for (int i = 0; i <= users.size(); i++) {
             good = 0;
-            for (int k = 0; k <= users.get(i).getLikes.size(); k++) {
-                for (int j = 0; j <= user.getLikes.size(); j++) {
-                    if (users.get(i).getLikes.get(k) == user.getLikes.get(j)) {
+            for (int k = 0; k <= users.get(i).getLikes().size(); k++) {
+                for (int j = 0; j <= user.getLikes().size(); j++) {
+                    if (users.get(i).getLikes().get(k) == user.getLikes.get(j)) {
                         good++;
                     }
                 }
@@ -60,8 +60,9 @@ public class Filters {
                 userFilteredBad.add(users.get(i));
             }
         }
-        userFiltered.add
-        return userFilteredGood + userFilteredBad;
+        userFiltered.addAll(userFilteredGood);
+        userFiltered.addAll(userFilteredBad);
+        return userFiltered;
     }
 
 }
