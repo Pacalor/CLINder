@@ -22,7 +22,7 @@ public class UserManager {
     }
 
     public void newUser(User u) {
-        users.put(u.name, u);
+        users.put(u.getName(), u);
     }
 
     public HashMap<String, User> getUsers() {
@@ -39,6 +39,10 @@ public class UserManager {
             ok = toTest.getPass().equals(pass);
         }
         return ok;
+    }
+    
+    public User getUser(String name) {
+        return users.get(name);
     }
 }
 
