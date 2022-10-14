@@ -5,34 +5,42 @@
 package com.curso.clinder;
 
 import java.util.HashMap;
+import javax.xml.stream.events.StartElement;
 
 /**
  *
  * @author abzambra
  */
 public class UserManager {
-    
-     HashMap<String, User> users;
-    
+
+    String n;
+
+    HashMap<String, User> users;
+
     public UserManager() {
         users = new HashMap<>();
     }
-    
-    public void newUser(User u){
+
+    public void newUser(User u) {
         users.put(u.name, u);
-    }
-    
-    public boolean connect(String name, String pass){
-        return users.containsKey(pass);
     }
 
     public HashMap<String, User> getUsers() {
         return users;
     }
-    
+
     //Comparo las contraseñas 
+    public boolean checkPass(String name, String pass){
     
-    
-    
-    
+        boolean ok= false;
+        
+        if (users.containsKey(name)){
+            User toTest = users.get(name);
+            ok = toTest.getPass().equals(pass);
+        }
+        return ok;
+    }
 }
+
+    
+

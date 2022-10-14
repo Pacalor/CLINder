@@ -58,6 +58,16 @@ public class User {
         this.gender = gender;
     }
 
+    public String getPass() {
+        return pass;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    
+    
     @Override
     public String toString() {
         String likes="";
