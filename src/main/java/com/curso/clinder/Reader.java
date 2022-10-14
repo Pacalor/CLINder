@@ -4,6 +4,7 @@
  */
 package com.curso.clinder;
 
+import static com.curso.clinder.Constants.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
